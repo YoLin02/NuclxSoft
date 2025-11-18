@@ -1,44 +1,27 @@
 <template>
-  <section class="home-hero">
-    <div class="home-hero__content">
-      <p class="hero-eyebrow">面向B2B的白橙智联云</p>
-      <h1>为企业打造高粘性的数字化合作网络</h1>
-      <p class="hero-body">
-        通过统一的数据底座和柔性的业务编排，我们帮助客户在供应链、渠道和服务网络中实现实时协同，稳步提升营收效率。
+  <section class="hero-banner">
+    <div class="hero-content">
+      <p class="hero-eyebrow">Nuclx Soft · 跨境建站</p>
+      <h1>
+        强大的
+        <span class="hero-highlight">一站式</span>
+        独立站建设
+      </h1>
+      <p class="hero-subtitle">
+        覆盖建站、运营、营销与全球支付，为品牌提供持续增长的独立站基础设施，轻松链接客户、供应链与合作伙伴。
       </p>
-
-      <ul class="hero-highlights">
-        <li v-for="item in highlights" :key="item.title">
-          <span class="hero-highlights__badge" />
-          <div>
-            <strong>{{ item.title }}</strong>
-            <p>{{ item.caption }}</p>
-          </div>
+      <div class="hero-actions">
+        <BaseButton class="hero-btn hero-btn--primary" to="/products">获取建站方案</BaseButton>
+        <BaseButton class="hero-btn hero-btn--secondary" variant="ghost" to="/contact/advisor">
+          联系解决方案顾问
+        </BaseButton>
+      </div>
+      <ul class="hero-meta">
+        <li v-for="item in metaList" :key="item.text">
+          <span class="hero-meta__icon">✓</span>
+          <span v-html="item.text" />
         </li>
       </ul>
-
-      <div class="hero-actions">
-        <BaseButton to="/contact/advisor">预约顾问</BaseButton>
-        <BaseButton variant="ghost" to="/products">查看产品矩阵</BaseButton>
-      </div>
-    </div>
-
-    <div class="home-hero__panel">
-      <header>
-        <p>季度交付指数</p>
-        <strong>Nuclx Insight</strong>
-      </header>
-      <div class="hero-stats">
-        <div v-for="stat in stats" :key="stat.label" class="hero-stat">
-          <span>{{ stat.label }}</span>
-          <strong>{{ stat.value }}</strong>
-          <small>{{ stat.trend }}</small>
-        </div>
-      </div>
-      <footer>
-        <p>由Nuclx Soft脉搏引擎提供支持</p>
-        <span>实时刷新 · SLA 99.95%</span>
-      </footer>
     </div>
   </section>
 </template>
@@ -46,15 +29,9 @@
 <script setup lang="ts">
 import BaseButton from '~/components/ui/BaseButton.vue'
 
-const highlights = [
-  { title: '多租户业务协同', caption: '按组织灵活分层，快速整合上下游伙伴。' },
-  { title: '数据驱动决策', caption: '内建可观测性与分析模型，实时调优策略。' },
-  { title: '开放式生态', caption: 'API 与低代码共存，满足定制化与标准化需求。' }
-]
-
-const stats = [
-  { label: '项目履约率', value: '98.4%', trend: '+3.2% MoM' },
-  { label: '平均部署周期', value: '27天', trend: '较去年缩短 12 天' },
-  { label: '生态伙伴', value: '160+', trend: '新增 12 家 ISV' }
+const metaList = [
+  { text: '<strong>100个</strong> 自定义模块化编辑  ' },
+  { text: '<strong>80+</strong> 高可用性稳定架构' },
+  { text: '企业级安全与数据合规' }
 ]
 </script>

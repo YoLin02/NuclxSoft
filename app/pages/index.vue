@@ -2,6 +2,10 @@
   <div class="page-home">
     <HeroSection />
 
+    <section class="home-section-title">
+      精选案例
+    </section>
+
     <ProductSummary
       eyebrow="产品矩阵"
       title="覆盖渠道、供应链与服务网络的全域能力"
